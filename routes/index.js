@@ -1,4 +1,5 @@
 var _config = require('../../conf/config.js');
+var childProcess = require('child_process').exec();
 
 exports.service_picture = function(req, res){
 	// function (req, res) {
@@ -31,6 +32,13 @@ exports.service_picture = function(req, res){
 		}
 	}
 	console.log(res);
+	childProcess("pwd", function(err, stdout, stderr) {
+		console.log('stdout: ' + stdout);
+	    console.log('stderr: ' + stderr);
+	    if (error !== null) {
+	        console.log('exec error: ' + err);
+	    }
+	})
 	// console.log(JSON.stringify(getParams(req)));
 	// res.status(200).send('okkkkkk');
 	// res.json('okkkkkk');
