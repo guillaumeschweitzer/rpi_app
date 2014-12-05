@@ -30,9 +30,11 @@ exports.service_picture = function(req, res){
 			param : req.params.fileName
 		}
 	}
-	console.log(JSON.stringify(getParams(req)));
-	var resp = res.send("C:\\Users\\Guillaume\\Desktop\\Projets\\RPI\\appli\\appli_rpi\\public\\test.png");
-	console.log(resp);
+	console.log(res);
+	// console.log(JSON.stringify(getParams(req)));
+	// res.status(200).send('okkkkkk');
+	// res.json('okkkkkk');
+	res.send("json");
 };
 
 exports.index = function(req, res){
@@ -40,5 +42,9 @@ exports.index = function(req, res){
 };
 
 exports.picture = function(req, res){
-  res.render('picture', { title: ' * ', data : {}});
+  res.render('picture', { title: ' Taking Picture Module ', data : {}});
+};
+
+exports.elasticsearch = function(req, res){
+  res.render('elasticsearch', { title: ' ElasticSearch ', data : {}});
 };
