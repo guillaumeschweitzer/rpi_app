@@ -1,5 +1,5 @@
 var _config = require('../../conf/config.js');
-var childProcess = require('child_process').exec();
+var childProcess = require('child_process').exec;
 
 exports.service_picture = function(req, res){
 	// function (req, res) {
@@ -31,18 +31,18 @@ exports.service_picture = function(req, res){
 			param : req.params.fileName
 		}
 	}
-	console.log(res);
-	childProcess("pwd", function(err, stdout, stderr) {
+	childProcess('node -v', function(err, stdout, stderr) {
 		console.log('stdout: ' + stdout);
 	    console.log('stderr: ' + stderr);
-	    if (error !== null) {
+	    if (err !== null) {
 	        console.log('exec error: ' + err);
 	    }
-	})
+	    res.send("json");
+	});
 	// console.log(JSON.stringify(getParams(req)));
 	// res.status(200).send('okkkkkk');
 	// res.json('okkkkkk');
-	res.send("json");
+	
 };
 
 exports.index = function(req, res){
