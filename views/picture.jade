@@ -1,0 +1,13 @@
+head 
+link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+script(src="/javascripts/lib/jquery-2.1.1.min.js")
+script(src="/javascripts/picture.js")
+script(src="/javascripts/search.js")
+script(src="/javascripts/lib/bootstrap.min.js")
+body
+	h1= title
+	div
+		p Indiquer le chemin pour afficher le répertoire : 
+		input(type="text")#path
+		button(type="submit") OK
+	div#display
