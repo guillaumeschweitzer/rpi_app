@@ -4,11 +4,35 @@ function getPicture(path){
 
 };
 
+// $(document).on('click', 'div button', function(){
+//     var fileName = $('input#path').val();
+//     postRequestToGetPicture(fileName, function(error, result) {
+//         if (!error) 
+//             console.log(result, typeof result);
+//         	// on peut récupérer un fichier 
+//     });
+// });
+
 $(document).on('click', 'div button', function(){
-    var args = $('input#path').val();
-    console.log("Arguments envoyés : ", args);
-    postRequestToGetPicture(args, function(error, result) {
-        if (!error) 
-            console.log(result, typeof result);
+    var fileName = $('input#path').val();
+
+    // Check fileName ! 
+
+    postRequestToTakePicture(fileName, function(error, result) {
+        if (!error) {
+            // console.log(result, typeof result);
+        	postRequestToCopyPicture(function(err, res){
+        		if (!err) {
+		        	$('div#linkToDisplay').append("<a href='/showPicture'>Show me Picture</a>");
+		        	// Quand la photo est prise, on affiche ok + un lien vers showPicture ! 
+		        	// Display link ! 
+        		}
+        		else 
+        			alert('erreur dans la copie du fichier');
+        	})
+        }
+        else {
+        	alert("Erreur dans la caputre image : '", error, "', '", result,"'");
+        }
     });
-})
+});

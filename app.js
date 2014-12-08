@@ -15,24 +15,16 @@ app.get("/", routes.index);
 app.get("/index", routes.index);
 app.get("/picture", routes.picture);
 app.get("/elasticsearch", routes.elasticsearch);
+app.get("/showPicture", routes.showPicture);
 
 
 // Services
-app.get('/service_picture/:fileName?', routes.service_picture);
+app.get('/service_get_picture/:fileName?', routes.service_get_picture);
+app.get('/service_take_picture/:fileName?', routes.service_take_picture);
 
+app.get('/service_copy_file', routes.service_copy_file);
 
 app.listen(_config.connexion.port);
-
-
-
-
-
-
-
-
-
-
-
 
 
 

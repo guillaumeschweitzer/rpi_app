@@ -2,14 +2,9 @@ head
 link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 script(src="/javascripts/lib/jquery-2.1.1.min.js")
 script(src="/javascripts/lib/bootstrap.min.js")
-script(src="/javascripts/index.js")
 body
 	h1= title
 	p Welcome
 	br
-	div#picture
-		a(href='/picture') Taking Picture Module
-	div#es
-		a(href='/elasticsearch') ElasticSearch Module
-	div#showPicture
-		a(href='#') Show Picture
+	div
+		img(src='/images/image.png', width='640', height='480')
