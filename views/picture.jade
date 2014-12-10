@@ -1,5 +1,6 @@
 head 
 link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+link(rel='stylesheet', href='/stylesheets/picture.css')
 script(src="/javascripts/lib/jquery-2.1.1.min.js")
 script(src="/javascripts/picture.js")
 script(src="/javascripts/search.js")
@@ -7,7 +8,116 @@ script(src="/javascripts/lib/bootstrap.min.js")
 body
 	h1= title
 	div
-		p Indiquer le chemin pour afficher le répertoire : 
-		input(type="text")#path
-		button(type="submit") OK
-	div#linkToDisplay
+		label(for='fileName') Indiquer le nom pour sauver 
+			input(type="text")#fileName
+		button(type="submit")#ok OK
+		br 
+		button(type="button")#options Options
+		div#optionList.span12
+			br
+			label(for='width').span4 Largeur
+				input(type="number", value="2592", min="0", max="2592")#width
+			br
+			label(for='height') Hauteur
+				input(type="number", value="1944", min="0", max="1944")#height
+			br
+			label(for='quality') Qualité
+				input(type="number",min="0",max="100", value="100")#quality
+			br
+			label(for='rotation') Rotation
+				input(type="number",min="0",max="360", value="0")#rotation
+			br
+			label(for='sharpness') Sharpness
+				input(type="number",min="-100",max="100", value="0")#sharpness
+			br
+			label(for='contrast') Contraste
+				input(type="number",min="-100",max="100", value="0")#contrast
+			br
+			label(for='brightness') Brightness
+				input(type="number",min="0",max="100", value="0")#brightness
+			br
+			label(for='saturation') Saturation
+				input(type="number",min="-100",max="100", value="0")#saturation
+			br
+			label(for='iso') ISO
+				input(type="number",min="-100",max="100", value="0")#saturation
+			br
+			label(for="verticalFlip") Vertical Flip
+			input(type="checkbox")#verticalFlip 
+			br
+			label(for="horizontalFlip") Horizontal Flip
+			input(type="checkbox")#horizontalFlip 
+			br
+			label Encoding
+			select#encoding 
+				option png 
+				option jpg
+				option bmp
+				option gif
+			br
+			label Exposure Mode
+			select#exposure
+				option auto
+				option night
+				option nightpreview
+				option backlight
+				option spotlight
+				option sports
+				option snow
+				option beach
+				option verylong
+				option fixedfps
+				option antishake
+				option fireworks
+			br
+			label AWB Mode
+			select#awb
+				option off
+				option auto
+				option sun
+				option cloud
+				option shade
+				option tungsten
+				option fluorescent
+				option incandescent
+				option flash
+				option horizon
+			br
+			label Image Effect
+			select#imageEffect
+				option none
+				option negative
+				option solarise
+				option sketch
+				option denoise
+				option emboss
+				option oilpaint
+				option hatch
+				option gpen
+				option pastel
+				option watercolour
+				option film
+				option blur
+				option saturation
+				option colourswap
+				option washedout
+				option posterise
+				option colourpoint
+				option colourbalance
+				option cartoonbr
+			br 
+			label Metering Mode
+			select#metering
+				option average
+				option spot
+				option backlit
+				option matrix
+			br 
+			label Dynamic Range Compression
+			select#drc
+				option off
+				option low
+				option med
+				option high
+			
+	div#display

@@ -1,0 +1,8 @@
+div#optionList {
+	display: none;
+	margin: 12px;
+}
+
+div#optionList button, div#optionList input {
+	float: right
+}
