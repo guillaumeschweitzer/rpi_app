@@ -19,12 +19,38 @@ function postRequest(action, options, callback) {
 };
 
 function postRequestToGetPicture(action, callback) {
-    var url = "service_picture/"+action;
+    var url = "service_get_picture/"+action;
     var options = "";
     postRequest(url, options, function(error, result) {
         if (!error) {
-            callback(result);
+            callback(error, result);
             console.log("Pas d'erreur", result);
+        }
+        else
+            console.log("error : ", error);
+    })
+};
+
+function postRequestToTakePicture(action, callback) {
+    var url = "service_take_picture/"+action;
+    var options = "";
+    postRequest(url, options, function(error, result) {
+        if (!error) {
+            callback(error, result);
+            console.log("take picture no error", result);
+        }
+        else
+            console.log("error : ", error);
+    })
+};
+
+function postRequestToCopyPicture(callback) {
+    var url = "service_copy_file/";
+    var options = "";
+    postRequest(url, options, function(error, result) {
+        if (!error) {
+            callback(error, result);
+            console.log("Copy No Probs", result);
         }
         else
             console.log("error : ", error);
